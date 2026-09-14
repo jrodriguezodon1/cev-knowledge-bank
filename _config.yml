@@ -118,8 +118,7 @@ defaults:
     values:
       layout: default
 
-# Theme — none (custom CSS)
-theme: null
+# No gem-based theme — full custom CSS
 
 # Sass
 sass:

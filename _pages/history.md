@@ -13,13 +13,15 @@ permalink: /history/
 {% assign sorted_docs = all_docs | sort: 'date' | reverse %}
 
 <!-- All unique tags -->
-{% assign all_tags = "" %}
+{% assign all_tags_arr = "" %}
 {% for doc in all_docs %}
-  {% for tag in doc.tags %}
-    {% assign all_tags = all_tags | append: tag | append: "," %}
-  {% endfor %}
+  {% if doc.tags %}
+    {% for tag in doc.tags %}
+      {% assign all_tags_arr = all_tags_arr | append: tag | append: "||" %}
+    {% endfor %}
+  {% endif %}
 {% endfor %}
-{% assign tag_list = all_tags | split: "," | uniq | sort %}
+{% assign tag_list = all_tags_arr | split: "||" | uniq %}
 
 <div class="filter-bar">
   <input type="text" id="searchInput" class="search-input" placeholder="Search…">
@@ -33,7 +35,7 @@ permalink: /history/
 
 <div class="entries-list">
   {% for doc in sorted_docs %}
-  {% assign doc_tags = doc.tags | join: "," %}
+  {% assign doc_tags = doc.tags | join: "," | default: "" %}
   <a href="{{ doc.url | relative_url }}" class="entry-card" data-tags="{{ doc_tags }}">
     <div class="entry-card-top">
       <span class="entry-card-title">{{ doc.title }}</span>
@@ -45,9 +47,11 @@ permalink: /history/
       {% if doc.category %}
       <span class="entry-category-badge cat-{{ doc.category }}">{{ doc.category }}</span>
       {% endif %}
-      {% for tag in doc.tags limit:3 %}
-      <span class="tag">{{ tag }}</span>
-      {% endfor %}
+      {% if doc.tags %}
+        {% for tag in doc.tags limit:3 %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      {% endif %}
     </div>
   </a>
   {% endfor %}
