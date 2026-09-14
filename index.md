@@ -5,52 +5,58 @@ title: Home
 
 <div class="hero">
   <h1>What I'm learning</h1>
-  <p>{{ site.collections | map: 'docs' | join | size }} entries across paid ads, AI agents, influencer marketing, and more.</p>
+  <p>{{ site.documents.size }} entries across paid ads, AI agents, influencer marketing, and more.</p>
 </div>
 
 <!-- Domain grid -->
+{% assign paid_ads_docs = site.documents | where: "category", "paid-ads" %}
+{% assign im_docs = site.documents | where: "category", "influencer-marketing" %}
+{% assign de_docs = site.documents | where: "category", "dev-engineering" %}
+{% assign gtm_docs = site.documents | where: "category", "product-gtm" %}
+{% assign ai_docs = site.documents | where: "category", "ai-agents" %}
+{% assign biz_docs = site.documents | where: "category", "founder-business" %}
+{% assign life_docs = site.documents | where: "category", "life-personal" %}
+
 <div class="domain-grid">
   <a href="{{ '/paid-ads/' | relative_url }}" class="domain-card">
     <span class="domain-icon">📈</span>
     <div class="domain-label">Paid Ads</div>
-    <div class="domain-count">{{ site['paid-ads'].docs.size }} entries</div>
+    <div class="domain-count">{{ paid_ads_docs.size }} entries</div>
   </a>
   <a href="{{ '/influencer-marketing/' | relative_url }}" class="domain-card">
     <span class="domain-icon">🤝</span>
     <div class="domain-label">Influencer Mktg</div>
-    <div class="domain-count">{{ site['influencer-marketing'].docs.size }} entries</div>
+    <div class="domain-count">{{ im_docs.size }} entries</div>
   </a>
   <a href="{{ '/dev-engineering/' | relative_url }}" class="domain-card">
     <span class="domain-icon">⚙️</span>
     <div class="domain-label">Dev & Eng</div>
-    <div class="domain-count">{% assign de_count = site['dev-engineering'].docs.size | plus: site['dev-technical'].docs.size %}{{ de_count }} entries</div>
+    <div class="domain-count">{{ de_docs.size }} entries</div>
   </a>
   <a href="{{ '/product-gtm/' | relative_url }}" class="domain-card">
     <span class="domain-icon">🚀</span>
     <div class="domain-label">Product & GTM</div>
-    <div class="domain-count">{{ site['product-gtm'].docs.size }} entries</div>
+    <div class="domain-count">{{ gtm_docs.size }} entries</div>
   </a>
   <a href="{{ '/ai-agents/' | relative_url }}" class="domain-card">
     <span class="domain-icon">🤖</span>
     <div class="domain-label">AI Agents</div>
-    <div class="domain-count">{{ site['ai-agents'].docs.size }} entries</div>
+    <div class="domain-count">{{ ai_docs.size }} entries</div>
   </a>
   <a href="{{ '/founder-business/' | relative_url }}" class="domain-card">
     <span class="domain-icon">🏗️</span>
     <div class="domain-label">Founder & Biz</div>
-    <div class="domain-count">{% assign fb_count = site['founder-business'].docs.size | plus: site['attribution-mmm'].docs.size | plus: site['business-strategy'].docs.size %}{{ fb_count }} entries</div>
+    <div class="domain-count">{{ biz_docs.size }} entries</div>
   </a>
   <a href="{{ '/life-personal/' | relative_url }}" class="domain-card">
     <span class="domain-icon">🌱</span>
     <div class="domain-label">Life & Personal</div>
-    <div class="domain-count">{{ site['life-personal'].docs.size }} entries</div>
+    <div class="domain-count">{{ life_docs.size }} entries</div>
   </a>
 </div>
 
 <!-- Recent entries -->
-{% assign all_docs = site['paid-ads'].docs | concat: site['influencer-marketing'].docs | concat: site['dev-engineering'].docs | concat: site['dev-technical'].docs | concat: site['product-gtm'].docs | concat: site['ai-agents'].docs | concat: site['founder-business'].docs | concat: site['life-personal'].docs | concat: site['attribution-mmm'].docs | concat: site['business-strategy'].docs | concat: site['content-marketing'].docs %}
-{% assign sorted_docs = all_docs | sort: 'date' | reverse %}
-{% assign recent_docs = sorted_docs | limit: 10 %}
+{% assign all_docs = site.documents | sort: "date" | reverse %}
 
 <!-- Collect all unique tags -->
 {% assign all_tags_arr = "" %}
@@ -61,7 +67,7 @@ title: Home
     {% endfor %}
   {% endif %}
 {% endfor %}
-{% assign tag_list = all_tags_arr | split: "||" | uniq %}
+{% assign tag_list = all_tags_arr | split: "||" | uniq | sort %}
 
 <div class="filter-bar">
   <input type="text" id="searchInput" class="search-input" placeholder="Search entries…">
@@ -76,7 +82,8 @@ title: Home
 <div class="section-label">Recent</div>
 
 <div class="entries-list">
-  {% for doc in sorted_docs %}
+  {% for doc in all_docs %}
+  {% unless doc.path contains "_pages" %}
   {% assign doc_tags = doc.tags | join: "," | default: "" %}
   <a href="{{ doc.url | relative_url }}" class="entry-card" data-tags="{{ doc_tags }}">
     <div class="entry-card-top">
@@ -86,12 +93,14 @@ title: Home
     {% assign excerpt_text = doc.content | strip_html | truncatewords: 18 %}
     <div class="entry-card-excerpt">{{ excerpt_text }}</div>
     <div class="entry-card-bottom">
+      {% if doc.category %}<span class="tag category-tag">{{ doc.category }}</span>{% endif %}
       {% if doc.tags %}
-        {% for tag in doc.tags limit:4 %}
+        {% for tag in doc.tags limit:3 %}
         <span class="tag">{{ tag }}</span>
         {% endfor %}
       {% endif %}
     </div>
   </a>
+  {% endunless %}
   {% endfor %}
 </div>
