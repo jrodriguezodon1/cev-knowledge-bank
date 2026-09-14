@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}JRO Brain Map</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% seo %}
+</head>
+<body>
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="brand">
+          <a href="{{ '/' | relative_url }}" class="brand-link">
+            <span class="brand-logo">JRO</span>
+            <span class="brand-tagline">brain map</span>
+          </a>
+        </div>
+
+        <nav class="nav">
+          <div class="nav-section-label">domains</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="{{ '/paid-ads/' | relative_url }}" class="nav-link {% if page.category == 'paid-ads' or page.url contains '/paid-ads/' %}active{% endif %}">
+                <span class="nav-emoji">📈</span>
+                <span class="nav-text">Paid Ads</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ '/influencer-marketing/' | relative_url }}" class="nav-link {% if page.category == 'influencer-marketing' or page.url contains '/influencer-marketing/' %}active{% endif %}">
+                <span class="nav-emoji">🤝</span>
+                <span class="nav-text">Influencer Mktg</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ '/dev-engineering/' | relative_url }}" class="nav-link {% if page.category == 'dev-engineering' or page.url contains '/dev-engineering/' %}active{% endif %}">
+                <span class="nav-emoji">⚙️</span>
+                <span class="nav-text">Dev & Eng</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ '/product-gtm/' | relative_url }}" class="nav-link {% if page.category == 'product-gtm' or page.url contains '/product-gtm/' %}active{% endif %}">
+                <span class="nav-emoji">🚀</span>
+                <span class="nav-text">Product & GTM</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ '/ai-agents/' | relative_url }}" class="nav-link {% if page.category == 'ai-agents' or page.url contains '/ai-agents/' %}active{% endif %}">
+                <span class="nav-emoji">🤖</span>
+                <span class="nav-text">AI Agents</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ '/founder-business/' | relative_url }}" class="nav-link {% if page.category == 'founder-business' or page.url contains '/founder-business/' %}active{% endif %}">
+                <span class="nav-emoji">🏗️</span>
+                <span class="nav-text">Founder & Biz</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ '/life-personal/' | relative_url }}" class="nav-link {% if page.category == 'life-personal' or page.url contains '/life-personal/' %}active{% endif %}">
+                <span class="nav-emoji">🌱</span>
+                <span class="nav-text">Life & Personal</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="nav-section-label" style="margin-top: 2rem;">views</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="{{ '/history/' | relative_url }}" class="nav-link {% if page.url contains '/history/' %}active{% endif %}">
+                <span class="nav-emoji">🕐</span>
+                <span class="nav-text">All Entries</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <span class="entry-count">{{ site.collections | map: 'docs' | join | size }} entries</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Mobile header -->
+    <header class="mobile-header">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="{{ '/' | relative_url }}" class="mobile-brand">JRO</a>
+    </header>
+
+    <!-- Main -->
+    <main class="main" id="main">
+      {{ content }}
+    </main>
+
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <script>
+    // Mobile sidebar toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('active');
+    }
+
+    menuToggle?.addEventListener('click', toggleSidebar);
+    overlay?.addEventListener('click', toggleSidebar);
+
+    // Tag filter
+    const tagBtns = document.querySelectorAll('.tag-filter-btn');
+    const cards = document.querySelectorAll('.entry-card[data-tags]');
+
+    tagBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tag = btn.dataset.tag;
+        tagBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        if (tag === 'all') {
+          cards.forEach(c => c.style.display = '');
+        } else {
+          cards.forEach(c => {
+            const tags = c.dataset.tags.split(',');
+            c.style.display = tags.includes(tag) ? '' : 'none';
+          });
+        }
+      });
+    });
+
+    // Search
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        const q = searchInput.value.toLowerCase();
+        cards.forEach(c => {
+          const text = c.textContent.toLowerCase();
+          c.style.display = text.includes(q) ? '' : 'none';
+        });
+      });
+    }
+  </script>
+</body>
+</html>

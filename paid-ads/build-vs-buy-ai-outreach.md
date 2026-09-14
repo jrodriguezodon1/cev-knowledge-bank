@@ -1,3 +1,11 @@
+---
+title: "Build vs Buy — AI Outreach (Artisan/$37M vs DIY in 17 min)"
+date: 2026-09-12
+tags: ["outreach", "ai-agents", "saas", "build-vs-buy", "influencer"]
+category: paid-ads
+source: "https://www.instagram.com/reel/DbEXteEtZ1z/"
+layout: entry
+---
 # Build vs Buy — AI Outreach (Artisan/$37M vs DIY in 17 min)
 
 **Source:** [Instagram Reel](https://www.instagram.com/reel/DbEXteEtZ1z/)

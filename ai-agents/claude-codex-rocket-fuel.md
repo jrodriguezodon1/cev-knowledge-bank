@@ -1,3 +1,11 @@
+---
+title: "Claude + Codex as Co-Founders — Rocket Fuel Framework"
+date: 2026-09-13
+tags: ["claude", "codex", "agents", "workflow", "ai-tooling"]
+category: ai-agents
+source: "https://www.instagram.com/reel/Dajsl8WxKlQ/"
+layout: entry
+---
 # Claude + Codex as Co-Founders — Rocket Fuel Framework
 
 **Source:** [Instagram Reel](https://www.instagram.com/reel/Dajsl8WxKlQ/)

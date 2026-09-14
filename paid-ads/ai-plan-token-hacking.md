@@ -1,3 +1,11 @@
+---
+title: "AI Plan Comparison — Token Hacking Series"
+date: 2026-09-12
+tags: ["ai-tooling", "claude", "codex", "grok", "cost"]
+category: paid-ads
+source: "https://www.instagram.com/reel/DdMoE8qhnKE/"
+layout: entry
+---
 # AI Plan Comparison — Token Hacking Series
 
 **Source:** [Instagram Reels — Token Hacking Ep 3 & 4](https://www.instagram.com/reel/DdMoE8qhnKE/) + [Ep 3](https://www.instagram.com/reel/DdHUCzaOOEm/)

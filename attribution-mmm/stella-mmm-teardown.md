@@ -1,3 +1,11 @@
+---
+title: "Stella — MMM + Incrementality Platform Teardown"
+date: 2026-09-03
+tags: []
+category: founder-business
+source: "Instagram Reel — https://www.instagram.com/reel/Dc6V_w3PpTB/ + stellaheystella.com"
+layout: entry
+---
 # Stella — MMM + Incrementality Platform Teardown
 
 **Source:** Instagram Reel — https://www.instagram.com/reel/Dc6V_w3PpTB/ + stellaheystella.com

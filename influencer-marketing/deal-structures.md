@@ -1,3 +1,11 @@
+---
+title: "Deal Structures — Fixed vs Commission vs Hybrid vs CPM"
+date: 2026-09-10
+tags: ["deals", "influencer", "negotiation", "pricing"]
+category: influencer-marketing
+source: "Internal BYOB + CreatorLookup operating experience"
+layout: entry
+---
 # Deal Structures — Fixed vs Commission vs Hybrid vs CPM
 
 **Source:** Internal BYOB + CreatorLookup operating experience

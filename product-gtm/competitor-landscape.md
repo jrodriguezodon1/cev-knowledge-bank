@@ -1,3 +1,11 @@
+---
+title: "Creator Economy Competitor Landscape"
+date: 2026-09-10
+tags: ["competitors", "creatorlookup", "orbit", "agentio", "market"]
+category: product-gtm
+source: "Research + outreach (Sep 2026)"
+layout: entry
+---
 # Creator Economy Competitor Landscape
 
 **Source:** Research + outreach (Sep 2026)

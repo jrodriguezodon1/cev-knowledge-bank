@@ -1,3 +1,11 @@
+---
+title: "AI Plan Strategy — Claude Max + Codex Max"
+date: 2026-09-12
+tags: ["claude", "codex", "grok", "ai-tooling", "cost", "workflow"]
+category: ai-agents
+source: "Token Hacking series (Instagram) + internal usage (Sep 2026)"
+layout: entry
+---
 # AI Plan Strategy — Claude Max + Codex Max
 
 **Source:** Token Hacking series (Instagram) + internal usage (Sep 2026)

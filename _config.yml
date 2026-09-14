@@ -1,0 +1,150 @@
+title: "JRO Brain Map"
+description: "Jose Rodriguez Odon's personal knowledge base — paid ads, AI agents, founder ops, and more."
+baseurl: "/cev-knowledge-bank"
+url: "https://jrodriguezodon1.github.io"
+
+author:
+  name: Jose Rodriguez Odon
+  initials: JRO
+
+# Collections — treat each domain folder as a collection
+collections_dir: .
+collections:
+  paid-ads:
+    output: true
+    permalink: /paid-ads/:name/
+  influencer-marketing:
+    output: true
+    permalink: /influencer-marketing/:name/
+  dev-engineering:
+    output: true
+    permalink: /dev-engineering/:name/
+  dev-technical:
+    output: true
+    permalink: /dev-technical/:name/
+  product-gtm:
+    output: true
+    permalink: /product-gtm/:name/
+  ai-agents:
+    output: true
+    permalink: /ai-agents/:name/
+  founder-business:
+    output: true
+    permalink: /founder-business/:name/
+  life-personal:
+    output: true
+    permalink: /life-personal/:name/
+  attribution-mmm:
+    output: true
+    permalink: /attribution-mmm/:name/
+  business-strategy:
+    output: true
+    permalink: /business-strategy/:name/
+  content-marketing:
+    output: true
+    permalink: /content-marketing/:name/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "paid-ads"
+    values:
+      layout: entry
+      category: paid-ads
+  - scope:
+      path: ""
+      type: "influencer-marketing"
+    values:
+      layout: entry
+      category: influencer-marketing
+  - scope:
+      path: ""
+      type: "dev-engineering"
+    values:
+      layout: entry
+      category: dev-engineering
+  - scope:
+      path: ""
+      type: "dev-technical"
+    values:
+      layout: entry
+      category: dev-engineering
+  - scope:
+      path: ""
+      type: "product-gtm"
+    values:
+      layout: entry
+      category: product-gtm
+  - scope:
+      path: ""
+      type: "ai-agents"
+    values:
+      layout: entry
+      category: ai-agents
+  - scope:
+      path: ""
+      type: "founder-business"
+    values:
+      layout: entry
+      category: founder-business
+  - scope:
+      path: ""
+      type: "life-personal"
+    values:
+      layout: entry
+      category: life-personal
+  - scope:
+      path: ""
+      type: "attribution-mmm"
+    values:
+      layout: entry
+      category: founder-business
+  - scope:
+      path: ""
+      type: "business-strategy"
+    values:
+      layout: entry
+      category: founder-business
+  - scope:
+      path: ""
+      type: "content-marketing"
+    values:
+      layout: entry
+      category: paid-ads
+  - scope:
+      path: "_pages"
+      type: "pages"
+    values:
+      layout: default
+
+# Theme — none (custom CSS)
+theme: null
+
+# Sass
+sass:
+  style: compressed
+
+# Plugins (safe for GitHub Pages)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude non-site files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - _scripts
+
+# Include _pages
+include:
+  - _pages
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

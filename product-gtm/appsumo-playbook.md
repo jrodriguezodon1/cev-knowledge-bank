@@ -1,3 +1,11 @@
+---
+title: "AppSumo Launch Playbook — CreatorLookup"
+date: 2026-09-10
+tags: ["appsumo", "creatorlookup", "gtm", "launch", "ltda"]
+category: product-gtm
+source: "Internal planning (Sep 2026)"
+layout: entry
+---
 # AppSumo Launch Playbook — CreatorLookup
 
 **Source:** Internal planning (Sep 2026)

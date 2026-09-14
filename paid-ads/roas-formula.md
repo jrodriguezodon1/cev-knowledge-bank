@@ -1,3 +1,11 @@
+---
+title: "ROAS Formula Breakdown"
+date: 2026-09-12
+tags: ["roas", "meta", "google", "tiktok", "performance"]
+category: paid-ads
+source: "https://www.instagram.com/reel/DdMH3nev41_/"
+layout: entry
+---
 # ROAS Formula Breakdown
 
 **Source:** [Instagram Reel @mr.paidsocial](https://www.instagram.com/reel/DdMH3nev41_/)

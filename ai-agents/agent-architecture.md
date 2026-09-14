@@ -1,3 +1,11 @@
+---
+title: "Autonomous Agent Architecture — How It Actually Works"
+date: 2026-09-10
+tags: ["agents", "architecture", "mcp", "orbit", "creatorlookup", "autonomy"]
+category: ai-agents
+source: "Orbit Agent Platform master plan + CL agentic campaign build (Sep 2026)"
+layout: entry
+---
 # Autonomous Agent Architecture — How It Actually Works
 
 **Source:** Orbit Agent Platform master plan + CL agentic campaign build (Sep 2026)

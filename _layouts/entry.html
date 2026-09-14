@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<article class="entry-page">
+
+  <header class="entry-header">
+    <div class="entry-meta-top">
+      {% if page.category %}
+      <a href="{{ '/' | append: page.category | append: '/' | relative_url }}" class="entry-category-badge cat-{{ page.category }}">
+        {% case page.category %}
+          {% when 'paid-ads' %}📈 Paid Ads
+          {% when 'influencer-marketing' %}🤝 Influencer Mktg
+          {% when 'dev-engineering' %}⚙️ Dev & Eng
+          {% when 'product-gtm' %}🚀 Product & GTM
+          {% when 'ai-agents' %}🤖 AI Agents
+          {% when 'founder-business' %}🏗️ Founder & Biz
+          {% when 'life-personal' %}🌱 Life & Personal
+          {% else %}{{ page.category }}
+        {% endcase %}
+      </a>
+      {% endif %}
+      {% if page.date %}
+      <time class="entry-date" datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%b %d, %Y" }}
+      </time>
+      {% endif %}
+    </div>
+
+    <h1 class="entry-title">{{ page.title }}</h1>
+
+    {% if page.tags and page.tags.size > 0 %}
+    <div class="entry-tags">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if page.source and page.source != "" %}
+    <div class="entry-source">
+      <span class="entry-source-label">source</span>
+      <a href="{{ page.source }}" target="_blank" rel="noopener" class="entry-source-link">
+        {{ page.source | truncate: 80 }}
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:4px;vertical-align:middle">
+          <path d="M3.5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8.5M7 2h3m0 0v3m0-3L5 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="entry-body">
+    {{ content }}
+  </div>
+
+  <footer class="entry-footer">
+    <a href="javascript:history.back()" class="back-link">← Back</a>
+  </footer>
+
+</article>

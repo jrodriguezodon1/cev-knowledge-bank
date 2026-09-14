@@ -1,3 +1,11 @@
+---
+title: "Agentic Campaign Ops — The Vision"
+date: 2026-09-12
+tags: ["creatorlookup", "agents", "campaigns", "outreach", "autonomy"]
+category: influencer-marketing
+source: "Internal architecture sessions + CL product pivot (Sep 2026)"
+layout: entry
+---
 # Agentic Campaign Ops — The Vision
 
 **Source:** Internal architecture sessions + CL product pivot (Sep 2026)

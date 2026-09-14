@@ -1,3 +1,11 @@
+---
+title: "High-Performing Facebook Ad Hook Frameworks"
+date: 2026-09-03
+tags: []
+category: paid-ads
+source: "Instagram Reel — https://www.instagram.com/reel/Dbouu5GO_cb/"
+layout: entry
+---
 # High-Performing Facebook Ad Hook Frameworks
 
 **Source:** Instagram Reel — https://www.instagram.com/reel/Dbouu5GO_cb/

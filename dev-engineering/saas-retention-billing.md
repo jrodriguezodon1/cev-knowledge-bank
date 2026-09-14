@@ -1,3 +1,11 @@
+---
+title: "SaaS Retention & Billing Lessons — CreatorLookup"
+date: 2026-09-10
+tags: ["saas", "billing", "retention", "creatorlookup", "churn"]
+category: dev-engineering
+source: "CL metrics analysis (Sep 2026)"
+layout: entry
+---
 # SaaS Retention & Billing Lessons — CreatorLookup
 
 **Source:** CL metrics analysis (Sep 2026)

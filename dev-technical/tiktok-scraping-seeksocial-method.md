@@ -1,3 +1,11 @@
+---
+title: "TikTok Mobile API Scraping — SeekSocial / DataShack Method"
+date: 2026-09-01
+tags: []
+category: dev-engineering
+source: "https://tiktok-api.seeksocial.io"
+layout: entry
+---
 # TikTok Mobile API Scraping — SeekSocial / DataShack Method
 
 > **Source:** https://tiktok-api.seeksocial.io  

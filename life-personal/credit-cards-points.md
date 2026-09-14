@@ -1,3 +1,11 @@
+---
+title: "Credit Cards & Points Strategy"
+date: 2026-09-10
+tags: ["credit-cards", "points", "amex", "chase", "travel", "finance"]
+category: life-personal
+source: "Jose's current stack (Sep 2026)"
+layout: entry
+---
 # Credit Cards & Points Strategy
 
 **Source:** Jose's current stack (Sep 2026)

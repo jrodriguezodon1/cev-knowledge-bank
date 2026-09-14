@@ -1,3 +1,11 @@
+---
+title: "Creator Discovery — Embeddings & Vector Search"
+date: 2026-09-10
+tags: ["creatorlookup", "embeddings", "vector-search", "discovery", "moat"]
+category: influencer-marketing
+source: "Jose's r/influencermarketing Reddit comment + internal product thinking (Sep 2026)"
+layout: entry
+---
 # Creator Discovery — Embeddings & Vector Search
 
 **Source:** Jose's r/influencermarketing Reddit comment + internal product thinking (Sep 2026)

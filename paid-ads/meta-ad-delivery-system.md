@@ -1,3 +1,11 @@
+---
+title: "Meta Ad Delivery System — Andromeda, Lattice, GEM"
+date: 2026-09-10
+tags: ["meta", "delivery", "roas", "creative", "targeting"]
+category: paid-ads
+source: "https://www.tiktok.com/@mr.paidsocial/video/7600101862116805918"
+layout: entry
+---
 # Meta Ad Delivery System — Andromeda, Lattice, GEM
 
 **Source:** [@mr.paidsocial TikTok](https://www.tiktok.com/@mr.paidsocial/video/7600101862116805918)

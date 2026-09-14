@@ -1,3 +1,11 @@
+---
+title: "Business Model Tradeoffs — SaaS vs Usage vs LTD"
+date: 2026-09-10
+tags: ["saas", "pricing", "business-model", "creatorlookup"]
+category: founder-business
+source: "CL product analysis + internal thinking (Sep 2026)"
+layout: entry
+---
 # Business Model Tradeoffs — SaaS vs Usage vs LTD
 
 **Source:** CL product analysis + internal thinking (Sep 2026)
