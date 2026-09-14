@@ -6,12 +6,11 @@ permalink: /founder-business/
 ---
 
 <div class="domain-header">
-  <h1 class="page-title">🏗️ Founder & Business</h1>
-  <p class="page-subtitle">Mental models, creator economy landscape, business strategy, attribution.</p>
+  <h1 class="page-title">💼 Founder & Business</h1>
+  <p class="page-subtitle">Mental models, creator economy landscape, business strategy.</p>
 </div>
 
-{% assign domain_docs = site['founder-business'].docs | concat: site['attribution-mmm'].docs | concat: site['business-strategy'].docs %}
-{% assign sorted_docs = domain_docs | sort: 'date' | reverse %}
+{% assign domain_docs = site.documents | where: "category", "founder-business" | sort: "date" | reverse %}
 
 {% assign all_tags_arr = "" %}
 {% for doc in domain_docs %}
@@ -21,10 +20,10 @@ permalink: /founder-business/
     {% endfor %}
   {% endif %}
 {% endfor %}
-{% assign tag_list = all_tags_arr | split: "||" | uniq %}
+{% assign tag_list = all_tags_arr | split: "||" | uniq | sort %}
 
 <div class="filter-bar">
-  <input type="text" id="searchInput" class="search-input" placeholder="Search…">
+  <input type="text" id="searchInput" class="search-input" placeholder="Search entries…">
   <button class="tag-filter-btn active" data-tag="all">All</button>
   {% for tag in tag_list %}
     {% unless tag == "" %}
@@ -33,9 +32,9 @@ permalink: /founder-business/
   {% endfor %}
 </div>
 
-{% if sorted_docs.size > 0 %}
+{% if domain_docs.size > 0 %}
 <div class="entries-list">
-  {% for doc in sorted_docs %}
+  {% for doc in domain_docs %}
   {% assign doc_tags = doc.tags | join: "," | default: "" %}
   <a href="{{ doc.url | relative_url }}" class="entry-card" data-tags="{{ doc_tags }}">
     <div class="entry-card-top">

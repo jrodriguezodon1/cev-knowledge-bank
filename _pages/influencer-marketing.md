@@ -10,8 +10,7 @@ permalink: /influencer-marketing/
   <p class="page-subtitle">Deal structures, outreach, campaign ops, pricing benchmarks.</p>
 </div>
 
-{% assign domain_docs = site['influencer-marketing'].docs %}
-{% assign sorted_docs = domain_docs | sort: 'date' | reverse %}
+{% assign domain_docs = site.documents | where: "category", "influencer-marketing" | sort: "date" | reverse %}
 
 {% assign all_tags_arr = "" %}
 {% for doc in domain_docs %}
@@ -21,10 +20,10 @@ permalink: /influencer-marketing/
     {% endfor %}
   {% endif %}
 {% endfor %}
-{% assign tag_list = all_tags_arr | split: "||" | uniq %}
+{% assign tag_list = all_tags_arr | split: "||" | uniq | sort %}
 
 <div class="filter-bar">
-  <input type="text" id="searchInput" class="search-input" placeholder="Search…">
+  <input type="text" id="searchInput" class="search-input" placeholder="Search entries…">
   <button class="tag-filter-btn active" data-tag="all">All</button>
   {% for tag in tag_list %}
     {% unless tag == "" %}
@@ -33,9 +32,9 @@ permalink: /influencer-marketing/
   {% endfor %}
 </div>
 
-{% if sorted_docs.size > 0 %}
+{% if domain_docs.size > 0 %}
 <div class="entries-list">
-  {% for doc in sorted_docs %}
+  {% for doc in domain_docs %}
   {% assign doc_tags = doc.tags | join: "," | default: "" %}
   <a href="{{ doc.url | relative_url }}" class="entry-card" data-tags="{{ doc_tags }}">
     <div class="entry-card-top">

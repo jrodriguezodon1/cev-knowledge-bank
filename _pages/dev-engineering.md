@@ -7,11 +7,10 @@ permalink: /dev-engineering/
 
 <div class="domain-header">
   <h1 class="page-title">⚙️ Dev & Engineering</h1>
-  <p class="page-subtitle">Architecture, DB scaling, SaaS patterns, Next.js/Supabase, scraping.</p>
+  <p class="page-subtitle">Architecture, DB scaling, SaaS patterns, Next.js/Supabase.</p>
 </div>
 
-{% assign domain_docs = site['dev-engineering'].docs | concat: site['dev-technical'].docs %}
-{% assign sorted_docs = domain_docs | sort: 'date' | reverse %}
+{% assign domain_docs = site.documents | where: "category", "dev-engineering" | sort: "date" | reverse %}
 
 {% assign all_tags_arr = "" %}
 {% for doc in domain_docs %}
@@ -21,10 +20,10 @@ permalink: /dev-engineering/
     {% endfor %}
   {% endif %}
 {% endfor %}
-{% assign tag_list = all_tags_arr | split: "||" | uniq %}
+{% assign tag_list = all_tags_arr | split: "||" | uniq | sort %}
 
 <div class="filter-bar">
-  <input type="text" id="searchInput" class="search-input" placeholder="Search…">
+  <input type="text" id="searchInput" class="search-input" placeholder="Search entries…">
   <button class="tag-filter-btn active" data-tag="all">All</button>
   {% for tag in tag_list %}
     {% unless tag == "" %}
@@ -33,9 +32,9 @@ permalink: /dev-engineering/
   {% endfor %}
 </div>
 
-{% if sorted_docs.size > 0 %}
+{% if domain_docs.size > 0 %}
 <div class="entries-list">
-  {% for doc in sorted_docs %}
+  {% for doc in domain_docs %}
   {% assign doc_tags = doc.tags | join: "," | default: "" %}
   <a href="{{ doc.url | relative_url }}" class="entry-card" data-tags="{{ doc_tags }}">
     <div class="entry-card-top">
